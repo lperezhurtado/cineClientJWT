@@ -45,14 +45,14 @@ export class LoginService {
     localStorage.removeItem("token");
   }
 
-  on(event: Events): Observable<String> {
+  on(event: Events): Observable<string> {
     return this.subject.pipe(
-        filter((e: EmitEvent) => {
-            return e.event === event;
-        }),
-        map((e: EmitEvent) => {
-            return e.token;
-        })
+      filter((e: EmitEvent) => {
+          return e.event === event;
+      }),
+      map((e: EmitEvent) => {
+          return e.token;
+      })
     )
   }
 
@@ -66,6 +66,22 @@ export class LoginService {
     } else {
         let token: string = localStorage.getItem("token");
         return this.decodeService.parseJwt(token).name;
+    }
+  }
+  getUserType(): string {
+    if (!this.isSessionActive()) {
+      return "";
+    } else {
+      let token: string = localStorage.getItem("token");
+      return this.decodeService.parseJwt(token).tipousuario;
+    }
+  }
+  getID() {
+    if (!this.isSessionActive()) {
+      return "";
+    } else {
+      let token: string = localStorage.getItem("token");
+      return this.decodeService.parseJwt(token).id;
     }
   }
 

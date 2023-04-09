@@ -9,11 +9,17 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './component/shared/login/login.component';
+import { MenuComponent } from './component/shared/menu/menu.component';
+import { HomeComponent } from './component/shared/home/home.component';
+import { LogoutComponent } from './component/shared/logout/logout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    MenuComponent,
+    HomeComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
