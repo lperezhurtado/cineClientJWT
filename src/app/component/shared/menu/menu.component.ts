@@ -10,7 +10,7 @@ import { Events, LoginService } from 'src/app/service/login.service';
 })
 export class MenuComponent {
 
-  usuario: UsuarioInterface;
+  //usuario: UsuarioInterface;
   user: string = "";
   userType: string = "";
   strUrl: string = "";
@@ -22,7 +22,7 @@ export class MenuComponent {
   ) {
     this.user = loginService.getUserName();
     this.userType = loginService.getUserType();
-    this.isAdmin = this.userType=="administrador";
+    this.isAdmin = this.userType==="administrador";
     //ALTERNATIVA
     /*const storage = localStorage.getItem('usuario');
     this.usuario = storage? JSON.parse( localStorage.getItem("user") || "[]") : null;*/
@@ -42,14 +42,14 @@ export class MenuComponent {
       (data: string) => {
         this.user = this.loginService.getUserName();
         this.userType = this.loginService.getUserType();
-        this.isAdmin = this.userType=="administrador";
+        this.isAdmin = this.userType==="administrador";
 
       });
     this.loginService.on(Events.logout).subscribe(
       (data: string) => {
         this.user = '';
         this.userType = '';
-        this.isAdmin = this.userType=="administrador";
+        this.isAdmin = this.userType==="administrador";
       });
   }
 }

@@ -1,6 +1,7 @@
 <div class="contenedor" *ngIf="usuariosPage">
   <h2 class="text-center mt-4 mb-3">Gestión de usuarios</h2>
 
+  <!--========== BOTONERA SUPERIOR ============-->
   <div class="buttons py-3 mb-3">
     <a [routerLink]="['/admin/usuario/create']" class="btn btn-sm btn-outline-primary mx-2">
       <i class="pi pi-user-plus me-1"></i>
@@ -12,6 +13,7 @@
     </a>
   </div>
 
+  <!--========== INDICE Y BUSCADOR ============-->
   <div class="pagination-div">
     <app-pagination-unrouted [nPage]="usuariosPage.number + 1" [nTotalPages]="usuariosPage.totalPages" (eePage)="setPage($event)"></app-pagination-unrouted>
 
@@ -20,6 +22,7 @@
     <app-search-unrouted [placeHolder]="'Buscar usuario'" class="search" (onSearch)="setFilter( $event )"></app-search-unrouted>
   </div>
 
+  <!--========== TABLA DE DATOS ============-->
   <div class="table-container">
     <table class="table">
       <thead class="">
@@ -91,13 +94,13 @@
           <td>
 
             <div class="btn-group" role="group" aria-label="Herramientas">
-              <button class="btn btn-md mx-2 btn-outline-success view" (click)="openModalView(usuario.id)"><!--[routerLink]="['/admin/usuario/view',usuario.id]"-->
+              <button class="btn btn-md mx-2 btn-outline-success view" (click)="openModal(usuario.id, 'view')"><!--[routerLink]="['/admin/usuario/view',usuario.id]"-->
                 <i id="id" class="pi pi-eye" style="font-size: 1.5rem"></i>
               </button>
               <button class="btn btn-md mx2 edit" [routerLink]="['/admin/usuario/update',usuario.id]">
                 <i id="id" class="pi pi-user-edit" style="font-size: 1.5rem"></i>
               </button>
-              <button class="btn btn-md mx-2 btn-outline-danger delete" (click)="openModalDelete(usuario.id)"><!--[routerLink]="['/admin','usuario','delete',usuario.id]"-->
+              <button class="btn btn-md mx-2 btn-outline-danger delete" (click)="openModal(usuario.id, 'delete')"><!--[routerLink]="['/admin','usuario','delete',usuario.id]"-->
                 <i id="id" class="pi pi-trash" style="font-size: 1.5rem"></i>
               </button>
             </div>
@@ -127,38 +130,47 @@
   </div>
 </div>
 
-<div class="modal animation" id="viewUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!--====================== MODAL GENERAL =========================-->
+<div class="modal animation" id="modalGeneral" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content modal-div">
-          <!--<div class="modal-header">
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>-->
-          <div class="modal-body pb-0">
-              <!--<app-data-table-usuario *ngIf="id" [id]="this.id"></app-data-table-usuario>-->
-          </div>
-          <div class="modal-footer py-0">
-              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" (click)="getPage()">Cerrar</button>
-          </div>
-      </div>
-  </div>
-</div>
-
-<div class="modal animation" id="deleteUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content modal-div">
-          <!--<div class="modal-header">
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>-->
           <div class="modal-body">
-              <!--<app-delete-usuario *ngIf="id" (deleted)="closeModal($event)" [idUser]="this.id"></app-delete-usuario>-->
+              <app-delete-usuario *ngIf="id && component =='delete'" (deleted)="closeModal($event)" [idUser]="this.id"></app-delete-usuario>
+              <app-get-usuario *ngIf="id && component =='view'" [id]="this.id"></app-get-usuario>
           </div>
-          <!--<div class="modal-footer">
-              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" (click)="getPage()">
-                <i class="pi pi-times"></i>
-                Cancelar
-              </button>
-          </div>-->
+          <div class="modal-footer py-0" *ngIf="component=='view'">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" (click)="getPage()">Cerrar</button>
+          </div>
       </div>
   </div>
 </div>
 
+<!--============== MODAL VIEW ===============-->
+<!--<div class="modal animation" id="viewUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content modal-div">
+      <div class="modal-body pb-0">
+        <app-get-usuario *ngIf="id" [id]="this.id"></app-get-usuario>
+      </div>
+      <div class="modal-footer py-0">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" (click)="getPage()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>-->
+
+<!--============== MODAL DELETE ===============-->
+<!--<div class="modal animation" id="deleteUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-div">
+
+          <div class="modal-body">
+              <app-delete-usuario *ngIf="id && component =='delete'" (deleted)="closeModal($event)" [idUser]="this.id"></app-delete-usuario>
+              <app-get-usuario *ngIf="id && component =='view'" [id]="this.id"></app-get-usuario>
+          </div>
+          <div class="modal-footer py-0" *ngIf="component=='view'">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" (click)="getPage()">Cerrar</button>
+          </div>
+      </div>
+  </div>
+</div>-->

@@ -1,0 +1,17 @@
+<div class="container mb-0">
+  <h3 class="text-center mb-4">¿Eliminar usuario {{idUser}}?</h3>
+
+  <app-data-table-usuario [id]="idUser"></app-data-table-usuario>
+
+  <div class="button">
+    <a class="btn btn-outline-danger" (click)="deleteUsuario()">
+      <i class="pi pi-trash"></i>
+      Eliminar
+    </a>
+    <a class="btn btn-outline-secondary" (click)="onDeleted()">
+      <i class="pi pi-times"></i>
+      Cancelar
+    </a>
+  </div>
+
+</div>

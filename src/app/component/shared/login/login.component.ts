@@ -1,5 +1,4 @@
 import { Events } from './../../../service/login.service';
-import { DecodeService } from './../../../service/decode.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -22,10 +21,8 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private activateRoute: ActivatedRoute,
     private loginService: LoginService,
-    private cryptoService: CryptoService,
-    private decodeService: DecodeService
+    private cryptoService: CryptoService
   ) {
-
     if (this.loginService.isSessionActive()) {
       this.router.navigate(['/home']);
     }

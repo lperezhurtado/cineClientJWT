@@ -31,6 +31,7 @@ export class PlistUsuarioComponent implements OnInit {
   myModal: any;
   modalTitle: string = "";
   modalContent: string = "";
+  component: string = "";
 
   constructor(
     private usuarioService: UsuarioService,
@@ -112,26 +113,35 @@ export class PlistUsuarioComponent implements OnInit {
     this.getPage();
   }
 
-  openModalView(id: number): void {
+  openModal(id: number, component: string) {
+    this.id = id;
+    this.component = component;
+    this.myModal = new bootstrap.Modal(document.getElementById('modalGeneral'), { //pasar el myModal como parametro
+      keyboard: false
+    });
+    this.myModal.show();
+  }
+
+  /*openModalView(id: number): void {
     this.id = id;
     this.myModal = new bootstrap.Modal(document.getElementById('viewUser'), { //pasar el myModal como parametro
       keyboard: false
     });
     this.myModal.show();
-  }
+  }*/
 
-  openModalDelete(id: number): void {
+  /*openModalDelete(id: number): void {
     this.id = id;
     this.myModal = new bootstrap.Modal(document.getElementById('deleteUser'), { //pasar el myModal como parametro
       keyboard: false
     });
     this.myModal.show();
-  }
+  }*/
 
   closeModal(isDeleted: boolean) {
     this.isDeleted = isDeleted;
 
-    isDeleted? this.popUp.notificationPoUp('Usuario eliminado','succes') : '';
+    isDeleted? this.popUp.notificationPopUp('Usuario eliminado','success') : '';
     this.getPage();
     this.myModal.hide();
   }

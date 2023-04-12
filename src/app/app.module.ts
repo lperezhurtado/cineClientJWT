@@ -1,4 +1,5 @@
 import { CryptoService } from 'src/app/service/crypto.service';
+import { DecodeService } from './service/decode.service';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -8,6 +9,7 @@ import { CalendarModule } from 'primeng/calendar'; //CALENDAR PRIME NG
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 import { AppRoutingModule } from './app-routing.module';
+import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './component/shared/login/login.component';
 import { MenuComponent } from './component/shared/menu/menu.component';
@@ -19,8 +21,10 @@ import { PaginationUnroutedComponent } from './component/shared/unrouted/paginat
 import { PaginationComponent } from './component/shared/unrouted/pagination/pagination.component';
 import { SearchUnroutedComponent } from './component/shared/unrouted/search-unrouted/search-unrouted.component';
 import { PlistUsuarioComponent } from './component/application/admin/usuario/plist-usuario/plist-usuario.component';
-import { DecodeService } from './service/decode.service';
-import { AuthInterceptor } from './interceptor/auth.interceptor';
+import { GetUsuarioComponent } from './component/application/admin/usuario/get-usuario/get-usuario.component';
+import { DataTableUsuarioComponent } from './component/application/admin/usuario/auxiliar/data-table-usuario/data-table-usuario.component';
+import { DeleteUsuarioComponent } from './component/application/admin/usuario/delete-usuario/delete-usuario.component';
+import { CreateUsuarioComponent } from './component/application/admin/usuario/create-usuario/create-usuario.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +40,10 @@ import { AuthInterceptor } from './interceptor/auth.interceptor';
     DropdownRegisterPageComponent,
     //=================== USUARIO ADMIN =======================
     PlistUsuarioComponent,
+    GetUsuarioComponent,
+    DataTableUsuarioComponent,
+    DeleteUsuarioComponent,
+    CreateUsuarioComponent,
   ],
   imports: [
     BrowserModule,

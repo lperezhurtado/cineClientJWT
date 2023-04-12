@@ -8,12 +8,13 @@ export class PopUpService {
 
   constructor() { }
 
-  notificationPoUp(message: string, icon: string) {
+  notificationPopUp(message: string, icon: string) {
     Swal.fire({
       icon: <any>icon,
       title: message,
       toast: true,
       position: 'bottom-end',
+      showConfirmButton: false,
       timer: 2500,
       timerProgressBar: true,
       didOpen: (toast) => {
