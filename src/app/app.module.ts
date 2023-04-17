@@ -25,6 +25,7 @@ import { GetUsuarioComponent } from './component/application/admin/usuario/get-u
 import { DataTableUsuarioComponent } from './component/application/admin/usuario/auxiliar/data-table-usuario/data-table-usuario.component';
 import { DeleteUsuarioComponent } from './component/application/admin/usuario/delete-usuario/delete-usuario.component';
 import { CreateUsuarioComponent } from './component/application/admin/usuario/create-usuario/create-usuario.component';
+import { UpdateUsuarioComponent } from './component/application/admin/usuario/update-usuario/update-usuario.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { CreateUsuarioComponent } from './component/application/admin/usuario/cr
     DataTableUsuarioComponent,
     DeleteUsuarioComponent,
     CreateUsuarioComponent,
+    UpdateUsuarioComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,7 @@ import { PlistUsuarioComponent } from './component/application/admin/usuario/pli
 import { GetUsuarioComponent } from './component/application/admin/usuario/get-usuario/get-usuario.component';
 import { DeleteUsuarioComponent } from './component/application/admin/usuario/delete-usuario/delete-usuario.component';
 import { CreateUsuarioComponent } from './component/application/admin/usuario/create-usuario/create-usuario.component';
+import { UpdateUsuarioComponent } from './component/application/admin/usuario/update-usuario/update-usuario.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path:'admin/usuario/plist', component: PlistUsuarioComponent},
   {path:'admin/usuario/view/:id', component: GetUsuarioComponent},
   {path:'admin/usuario/delete/:id', component: DeleteUsuarioComponent},
-  {path:'admin/usuario/create', component: CreateUsuarioComponent}
+  {path:'admin/usuario/create', component: CreateUsuarioComponent},
+  {path:'admin/usuario/update/:id', component:UpdateUsuarioComponent}
 ];
 
 @NgModule({

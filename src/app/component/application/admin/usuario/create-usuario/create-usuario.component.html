@@ -5,7 +5,7 @@
   <div class="form-container">
     <form novalidate [formGroup]="form" (ngSubmit)="createUsuario()">
 
-      <div class="input-div"> <!--NOMBRE-->
+      <div class="input-div"> <!--=== NOMBRE ===-->
         <label for="inputName">Nombre</label>
         <input type="text" class="form-control" id="inputName" formControlName="nombre"
           [ngClass]="{ 'is-valid' : form.controls.nombre.dirty && !form.controls.nombre.errors?.['required']
