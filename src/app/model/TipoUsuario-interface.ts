@@ -1,3 +1,4 @@
+import { FormControl } from "@angular/forms";
 import { Pageable, Sort } from "./shared-interface";
 
 export interface TipoUsuarioInterface {
@@ -18,4 +19,14 @@ export interface TipoUsuarioResponse {
   first:            boolean;
   size:             number;
   empty:            boolean;
+}
+
+export interface TipoUsuarioNewInterface {
+  id:            number;
+  nombre:        string;
+}
+
+export interface TipoSalaFormInterface {
+  id:           FormControl<number>;
+  nombre:       FormControl<string>;
 }

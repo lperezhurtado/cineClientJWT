@@ -1,0 +1,29 @@
+
+<div class="container">
+
+  <h2 class="text-center mb-3">Tipos de usuario</h2>
+  <div class="table table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usertype of this.getPlistContent()">
+          <td (click)="userTypeSelected(usertype.id)">{{usertype.id}}</td>
+          <td (click)="userTypeSelected(usertype.id)">{{usertype.nombre}}</td>
+          <td>
+            <button class="btn btn-sm btn-outline-primary" (click)="userTypeSelected(usertype.id)">
+              <i class="pi pi-check"></i>
+              Seleccionar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+

@@ -26,6 +26,8 @@ import { DataTableUsuarioComponent } from './component/application/admin/usuario
 import { DeleteUsuarioComponent } from './component/application/admin/usuario/delete-usuario/delete-usuario.component';
 import { CreateUsuarioComponent } from './component/application/admin/usuario/create-usuario/create-usuario.component';
 import { UpdateUsuarioComponent } from './component/application/admin/usuario/update-usuario/update-usuario.component';
+import { ListaTipousuarioSelectionComponent } from './component/application/admin/tipousuario/auxiliar/lista-tipousuario-selection/lista-tipousuario-selection.component';
+import { ListaTiposalaSelectionComponent } from './component/application/admin/tiposala/auxiliar/lista-tiposala-selection/lista-tiposala-selection.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,8 @@ import { UpdateUsuarioComponent } from './component/application/admin/usuario/up
     DeleteUsuarioComponent,
     CreateUsuarioComponent,
     UpdateUsuarioComponent,
+    ListaTipousuarioSelectionComponent,
+    ListaTiposalaSelectionComponent,
   ],
   imports: [
     BrowserModule,

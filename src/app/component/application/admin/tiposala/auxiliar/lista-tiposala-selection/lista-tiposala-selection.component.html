@@ -1,0 +1,41 @@
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col" *ngIf="respFromServer">
+
+      <div>
+        <app-search-unrouted [placeHolder]="'Buscar por nombre'" (onSearch)="setFilter( $event )"></app-search-unrouted>
+        <app-dropdown-register-page class="mx-2" [PageSize]="respFromServer.size"
+          (eeRpp)="this.setRpp($event)">
+        </app-dropdown-register-page>
+      </div>
+      <div class="col-md">
+        <app-pagination-unrouted [nPage]="respFromServer.number + 1" [nTotalPages]="respFromServer.totalPages"
+          (eePage)="setPage($event)"></app-pagination-unrouted>
+      </div>
+
+      <h1 class="text-center mb-5">Tipos de Sala</h1>
+      <table class="table table-responsive table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tipoSala of respFromServer?.content">
+            <td>{{tipoSala.id}}</td>
+            <td>{{tipoSala.nombre}}</td>
+            <td>
+              <div class="btn-group" role="group" aria-label="Herramientas">
+                <button class="btn btn-sm btn-outline-primary" (click)="selectTipoSala(tipoSala.id)">
+                  Seleccionar
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

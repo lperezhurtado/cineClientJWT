@@ -54,7 +54,7 @@ export class UpdateUsuarioComponent implements OnInit{
   }
 
   updateUserTypeDescription(idUserType: number) {
-    this.tipoUsuarioService.getOne(idUserType).subscribe({
+    this.tipoUsuarioService.getTipoUsuario(idUserType).subscribe({
       next: (data: TipoUsuarioInterface) => {
         this.userTypeDescription = data.nombre;
       },
@@ -134,7 +134,7 @@ export class UpdateUsuarioComponent implements OnInit{
     this.myModal.show()
   }
 
-  closeTeamModal(id_usertype: number) {
+  closeUserTypeModal(id_usertype: number) {
     this.form.controls['tipousuario'].setValue(id_usertype);
     this.updateUserTypeDescription(id_usertype);
     this.myModal.hide();

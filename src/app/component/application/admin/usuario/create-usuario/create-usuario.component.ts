@@ -126,7 +126,7 @@ export class CreateUsuarioComponent implements OnInit {
   }
 
   updateUserTypeDescription(id_team: number) {
-    this.tipoUsuarioService.getOne(id_team).subscribe({
+    this.tipoUsuarioService.getTipoUsuario(id_team).subscribe({
       next: (data: TipoUsuarioInterface) => {
         this.tipousuarioDescription = data.nombre;
         return this.tipousuarioDescription;
@@ -136,6 +136,12 @@ export class CreateUsuarioComponent implements OnInit {
         this.form.controls['tipousuario'].setErrors({'incorrect': true});
       }
     });
+  }
+
+  closeUserTypeModal(id_usertype: number) {
+    this.form.controls['tipousuario'].setValue(id_usertype);
+    this.updateUserTypeDescription(id_usertype);
+    this.myModal.hide();
   }
 
 }

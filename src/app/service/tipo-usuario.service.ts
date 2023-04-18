@@ -2,18 +2,19 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { TipoUsuarioInterface, TipoUsuarioResponse } from '../model/TipoUsuario-interface';
+import { TipoUsuarioInterface, TipoUsuarioNewInterface, TipoUsuarioResponse } from '../model/TipoUsuario-interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TipoUsuarioService {
 
+  entityURL: string = "/tipousuario";
+  url : string = `${environment.baseURL}${this.entityURL}`;
+
   constructor(
     private httpClient: HttpClient
   ) { }
-
-  private entityURL: string = "/tipousuario";
 
   getUsersTypePlist(page: number, size: number): Observable<TipoUsuarioResponse>{
     let params = new HttpParams()
@@ -27,11 +28,23 @@ export class TipoUsuarioService {
       withCredentials: true,
       params: params
     };
-    const url : string = `${environment.baseURL}${this.entityURL}`;
-    return this.httpClient.get<TipoUsuarioResponse>(url, httpOptions);
+
+    return this.httpClient.get<TipoUsuarioResponse>(this.url, httpOptions);
   }
 
-  getOne(id: number): Observable<TipoUsuarioInterface> {
-    return this.httpClient.get<TipoUsuarioInterface>(`${environment.baseURL}${this.entityURL}` + "/" + id, {withCredentials:true});
+  getTipoUsuario(id: number): Observable<TipoUsuarioInterface> {
+    return this.httpClient.get<TipoUsuarioInterface>(this.url + "/" + id, {withCredentials:true});
+  }
+
+  createTipoUsuario(tipoUsuario: TipoUsuarioNewInterface): Observable<number> {
+    return this.httpClient.post<number>(this.url+'/', tipoUsuario, {withCredentials:true});
+  }
+
+  updateTipoUsuario(tipoUsuario: TipoUsuarioInterface):Observable<number> {
+    return this.httpClient.put<number>(this.url, tipoUsuario, {withCredentials:true});
+  }
+
+  deleteTipoUsuario(id: number): Observable<number> {
+    return this.httpClient.delete<number>(this.url+'/'+id, {withCredentials:true});
   }
 }
