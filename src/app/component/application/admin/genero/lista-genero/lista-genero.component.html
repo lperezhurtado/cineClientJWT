@@ -1,0 +1,60 @@
+
+<div class="container mt-5" *ngIf="respFromServer">
+  <div class="row">
+    <div class="col">
+      <div>
+        <button class="btn btn-outline-primary" (click)="back()">Volver</button>
+        <h1 class="text-center mb-5">Géneros</h1>
+      </div>
+
+      <div class="col-md text-end d-flex justify-content-center align-items-center mb-3 ">
+
+        <a [routerLink]="['/admin/genero/create']" class="btn btn-primary mx-3">Añadir género</a>
+        <app-search-unrouted [placeHolder]="'Buscar por nombre'" (onSearch)="setFilter( $event )"></app-search-unrouted>
+        <app-dropdown-register-page class="mx-2" [PageSize]="respFromServer.size"
+          (eeRpp)="this.setRpp($event)">
+        </app-dropdown-register-page>
+      </div>
+
+      <div class="col-md">
+        <app-pagination-unrouted [nPage]="respFromServer.number + 1" [nTotalPages]="respFromServer.totalPages"
+          (eePage)="setPage($event)"></app-pagination-unrouted>
+      </div>
+
+      <div class="col-md text-start">
+        <h5 class="text-muted" *ngIf="filter!=''">Filtrando por {{filter}} (borrar para resetear)</h5>
+      </div>
+
+      <div class="col-md text-end">
+        <h5 class="text-muted">Total registros {{respFromServer.totalElements}}</h5>
+      </div>
+
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th (click)="setOrder('id')">ID</th>
+            <th (click)="setOrder('nombre')">Nombre</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let genero of respFromServer?.content">
+            <td>{{genero.id}}</td>
+            <td>{{genero.nombre}}</td>
+            <td>
+              <div class="btn-group" role="group" aria-label="Herramientas">
+                <button class="btn btn-sm btn-warning" [routerLink]="['/admin/genero/update',genero.id]">
+                  Editar
+                </button>
+                <button class="btn btn-sm btn-danger" [routerLink]="['/admin','genero','delete',genero.id]">
+                  Eliminar
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

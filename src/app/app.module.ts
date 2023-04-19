@@ -40,6 +40,17 @@ import { DeleteSalaComponent } from './component/application/admin/sala/delete-s
 import { DataTableSalaComponent } from './component/application/admin/sala/auxiliar/data-table-sala/data-table-sala.component';
 import { SelectPlistComponent } from './component/application/admin/sala/auxiliar/select-plist/select-plist.component';
 import { PlistSalaComponent } from './component/application/admin/sala/plist-sala/plist-sala.component';
+import { CreateGeneroComponent } from './component/application/admin/genero/create-genero/create-genero.component';
+import { UpdateGeneroComponent } from './component/application/admin/genero/update-genero/update-genero.component';
+import { DeleteGeneroComponent } from './component/application/admin/genero/delete-genero/delete-genero.component';
+import { PlisGeneroComponent } from './component/application/admin/genero/plis-genero/plis-genero.component';
+import { ListaGeneroComponent } from './component/application/admin/genero/lista-genero/lista-genero.component';
+import { CreateTarifaComponent } from './component/application/admin/tarifa/create-tarifa/create-tarifa.component';
+import { UpdateTarifaComponent } from './component/application/admin/tarifa/update-tarifa/update-tarifa.component';
+import { DeleteTarifaComponent } from './component/application/admin/tarifa/delete-tarifa/delete-tarifa.component';
+import { PlistTarifaComponent } from './component/application/admin/tarifa/plist-tarifa/plist-tarifa.component';
+import { GetTarifaComponent } from './component/application/admin/tarifa/get-tarifa/get-tarifa.component';
+import { SelectPlistTarifaComponent } from './component/application/admin/tarifa/Auxiliar/select-plist/select-plist-tarifa.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +87,20 @@ import { PlistSalaComponent } from './component/application/admin/sala/plist-sal
     DeleteSalaComponent,
     DataTableSalaComponent,
     SelectPlistComponent,
-    PlistSalaComponent
+    PlistSalaComponent,
+    //=================== GENERO ADMIN =======================
+    CreateGeneroComponent,
+    UpdateGeneroComponent,
+    DeleteGeneroComponent,
+    PlisGeneroComponent,
+    ListaGeneroComponent,
+    //=================== TARIFA ADMIN =======================
+    CreateTarifaComponent,
+    UpdateTarifaComponent,
+    DeleteTarifaComponent,
+    PlistTarifaComponent,
+    GetTarifaComponent,
+    SelectPlistTarifaComponent
   ],
   imports: [
     BrowserModule,
