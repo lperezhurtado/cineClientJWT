@@ -28,6 +28,18 @@ import { CreateUsuarioComponent } from './component/application/admin/usuario/cr
 import { UpdateUsuarioComponent } from './component/application/admin/usuario/update-usuario/update-usuario.component';
 import { ListaTipousuarioSelectionComponent } from './component/application/admin/tipousuario/auxiliar/lista-tipousuario-selection/lista-tipousuario-selection.component';
 import { ListaTiposalaSelectionComponent } from './component/application/admin/tiposala/auxiliar/lista-tiposala-selection/lista-tiposala-selection.component';
+import { CreateTiposalaComponent } from './component/application/admin/tiposala/create-tiposala/create-tiposala.component';
+import { DeleteTiposalaComponent } from './component/application/admin/tiposala/delete-tiposala/delete-tiposala.component';
+import { GetTiposalaComponent } from './component/application/admin/tiposala/get-tiposala/get-tiposala.component';
+import { UpdateTiposalaComponent } from './component/application/admin/tiposala/update-tiposala/update-tiposala.component';
+import { PlistTiposalaComponent } from './component/application/admin/tiposala/plist-tiposala/plist-tiposala.component';
+import { GetSalaComponent } from './component/application/admin/sala/get-sala/get-sala.component';
+import { UpdateSalaComponent } from './component/application/admin/sala/update-sala/update-sala.component';
+import { CreateSalaComponent } from './component/application/admin/sala/create-sala/create-sala.component';
+import { DeleteSalaComponent } from './component/application/admin/sala/delete-sala/delete-sala.component';
+import { DataTableSalaComponent } from './component/application/admin/sala/auxiliar/data-table-sala/data-table-sala.component';
+import { SelectPlistComponent } from './component/application/admin/sala/auxiliar/select-plist/select-plist.component';
+import { PlistSalaComponent } from './component/application/admin/sala/plist-sala/plist-sala.component';
 
 @NgModule({
   declarations: [
@@ -48,8 +60,23 @@ import { ListaTiposalaSelectionComponent } from './component/application/admin/t
     DeleteUsuarioComponent,
     CreateUsuarioComponent,
     UpdateUsuarioComponent,
+    //=================== TIPOUSUARIO ADMIN =======================
     ListaTipousuarioSelectionComponent,
+    //=================== TIPOSALA ADMIN =======================
     ListaTiposalaSelectionComponent,
+    CreateTiposalaComponent,
+    DeleteTiposalaComponent,
+    GetTiposalaComponent,
+    UpdateTiposalaComponent,
+    PlistTiposalaComponent,
+    //=================== SALA ADMIN =======================
+    GetSalaComponent,
+    UpdateSalaComponent,
+    CreateSalaComponent,
+    DeleteSalaComponent,
+    DataTableSalaComponent,
+    SelectPlistComponent,
+    PlistSalaComponent
   ],
   imports: [
     BrowserModule,

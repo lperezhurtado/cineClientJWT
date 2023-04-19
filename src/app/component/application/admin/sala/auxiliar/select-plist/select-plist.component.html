@@ -1,0 +1,45 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col">
+      <h1 class="text-center mb-5">Salas</h1>
+      <!--<app-search-unrouted [placeHolder]="'Busqueda global'" (onSearch)="setFilter($event)"></app-search-unrouted>-->
+
+      <div class="paginacion" *ngIf="respFromServer">
+        <app-pagination-unrouted [nPage]="respFromServer.number + 1" [nTotalPages]="respFromServer.totalPages"
+          (eePage)="setPage($event)">
+        </app-pagination-unrouted>
+
+        <app-dropdown-register-page class="mx-2" [PageSize]="respFromServer.size"
+            (eeRpp)="this.setRpp($event)">
+        </app-dropdown-register-page>
+      </div>
+
+      <table class="table table-responsive table-striped">
+        <thead>
+          <tr>
+            <th (click)="setOrder('id')">ID</th>
+            <th (click)="setOrder('alto')">Alto</th>
+            <th (click)="setOrder('ancho')">Ancho</th>
+            <th>Tipo de Sala</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let sala of respFromServer?.content">
+            <td>{{sala.id}}</td>
+            <td>{{sala.alto}}</td>
+            <td>{{sala.ancho}}</td>
+            <td>{{sala.tiposala.nombre}}</td>
+            <td>
+              <div class="btn-group" role="group" aria-label="Herramientas">
+                <button class="btn btn-sm btn-outline-primary" (click)="selectSala(sala.id)">
+                  Seleccionar
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
