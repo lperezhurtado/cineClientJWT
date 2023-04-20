@@ -26,6 +26,16 @@ import { CreateTarifaComponent } from './component/application/admin/tarifa/crea
 import { DeleteTarifaComponent } from './component/application/admin/tarifa/delete-tarifa/delete-tarifa.component';
 import { PlistTarifaComponent } from './component/application/admin/tarifa/plist-tarifa/plist-tarifa.component';
 import { UpdateTarifaComponent } from './component/application/admin/tarifa/update-tarifa/update-tarifa.component';
+import { CreatePeliculaComponent } from './component/application/admin/pelicula/create-pelicula/create-pelicula.component';
+import { DeletePeliculaComponent } from './component/application/admin/pelicula/delete-pelicula/delete-pelicula.component';
+import { GetPeliculaComponent } from './component/application/admin/pelicula/get-pelicula/get-pelicula.component';
+import { PlistPeliculaComponent } from './component/application/admin/pelicula/plist-pelicula/plist-pelicula.component';
+import { UpdatePeliculaComponent } from './component/application/admin/pelicula/update-pelicula/update-pelicula.component';
+import { CreateSesionComponent } from './component/application/admin/sesion/create-sesion/create-sesion.component';
+import { DeleteSesionComponent } from './component/application/admin/sesion/delete-sesion/delete-sesion.component';
+import { GetSesionComponent } from './component/application/admin/sesion/get-sesion/get-sesion.component';
+import { PlistSesionComponent } from './component/application/admin/sesion/plist-sesion/plist-sesion.component';
+import { UpdateSesionComponent } from './component/application/admin/sesion/update-sesion/update-sesion.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
@@ -61,6 +71,19 @@ const routes: Routes = [
   {path:'admin/tarifa/create', component: CreateTarifaComponent},
   {path:'admin/tarifa/update/:id', component: UpdateTarifaComponent},
   {path:'admin/tarifa/delete/:id', component: DeleteTarifaComponent},
+  //=============== PELICULA ==================
+  {path:'admin/pelicula/plist', component: PlistPeliculaComponent},
+  {path:'admin/pelicula/view/:id', component: GetPeliculaComponent},
+  {path:'admin/pelicula/create', component: CreatePeliculaComponent},
+  {path:'admin/pelicula/delete/:id', component:DeletePeliculaComponent},
+  {path:'admin/pelicula/update/:id', component: UpdatePeliculaComponent},
+  //=============== SESION ==================
+  {path:'admin/sesion/plist', component: PlistSesionComponent},
+  {path:'admin/sesion/create', component: CreateSesionComponent},
+  {path:'admin/sesion/update/:id', component: UpdateSesionComponent},
+  {path:'admin/sesion/view/:id', component: GetSesionComponent},
+  {path:'admin/sesion/delete/:id', component: DeleteSesionComponent},
+
 ];
 
 @NgModule({

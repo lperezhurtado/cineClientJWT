@@ -51,6 +51,19 @@ import { DeleteTarifaComponent } from './component/application/admin/tarifa/dele
 import { PlistTarifaComponent } from './component/application/admin/tarifa/plist-tarifa/plist-tarifa.component';
 import { GetTarifaComponent } from './component/application/admin/tarifa/get-tarifa/get-tarifa.component';
 import { SelectPlistTarifaComponent } from './component/application/admin/tarifa/Auxiliar/select-plist/select-plist-tarifa.component';
+import { CreatePeliculaComponent } from './component/application/admin/pelicula/create-pelicula/create-pelicula.component';
+import { DeletePeliculaComponent } from './component/application/admin/pelicula/delete-pelicula/delete-pelicula.component';
+import { GetPeliculaComponent } from './component/application/admin/pelicula/get-pelicula/get-pelicula.component';
+import { PlistPeliculaComponent } from './component/application/admin/pelicula/plist-pelicula/plist-pelicula.component';
+import { UpdatePeliculaComponent } from './component/application/admin/pelicula/update-pelicula/update-pelicula.component';
+import { DataTablePeliculaComponent } from './component/application/admin/pelicula/auxiliar/data-table-pelicula/data-table-pelicula.component';
+import { SelectPlistPeliculaComponent } from './component/application/admin/pelicula/auxiliar/select-plist/select-plist-pelicula/select-plist-pelicula.component';
+import { CreateSesionComponent } from './component/application/admin/sesion/create-sesion/create-sesion.component';
+import { DeleteSesionComponent } from './component/application/admin/sesion/delete-sesion/delete-sesion.component';
+import { GetSesionComponent } from './component/application/admin/sesion/get-sesion/get-sesion.component';
+import { PlistSesionComponent } from './component/application/admin/sesion/plist-sesion/plist-sesion.component';
+import { UpdateSesionComponent } from './component/application/admin/sesion/update-sesion/update-sesion.component';
+import { DataTableSesionComponent } from './component/application/admin/sesion/Auxiliar/data-table-sesion/data-table-sesion.component';
 
 @NgModule({
   declarations: [
@@ -100,7 +113,22 @@ import { SelectPlistTarifaComponent } from './component/application/admin/tarifa
     DeleteTarifaComponent,
     PlistTarifaComponent,
     GetTarifaComponent,
-    SelectPlistTarifaComponent
+    SelectPlistTarifaComponent,
+    //=================== PELICULA ADMIN =======================
+    CreatePeliculaComponent,
+    DeletePeliculaComponent,
+    GetPeliculaComponent,
+    PlistPeliculaComponent,
+    UpdatePeliculaComponent,
+    DataTablePeliculaComponent,
+    SelectPlistPeliculaComponent,
+    //=================== SESION ADMIN =======================
+    CreateSesionComponent,
+    DeleteSesionComponent,
+    GetSesionComponent,
+    PlistSesionComponent,
+    UpdateSesionComponent,
+    DataTableSesionComponent
   ],
   imports: [
     BrowserModule,

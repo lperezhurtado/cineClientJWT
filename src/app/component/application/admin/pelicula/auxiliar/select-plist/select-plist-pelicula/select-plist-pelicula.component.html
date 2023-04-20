@@ -1,0 +1,44 @@
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col">
+      <h1 class="text-center mb-5">Peliculas</h1>
+      <app-search-unrouted [placeHolder]="'Busqueda global'" (onSearch)="setFilter($event)"></app-search-unrouted>
+
+      <div class="paginacion" *ngIf="respFromServer">
+        <app-pagination-unrouted [nPage]="respFromServer.number + 1" [nTotalPages]="respFromServer.totalPages"
+          (eePage)="setPage($event)">
+        </app-pagination-unrouted>
+
+        <app-dropdown-register-page class="mx-2" [PageSize]="respFromServer.size"
+            (eeRpp)="this.setRpp($event)">
+        </app-dropdown-register-page>
+      </div>
+      <table class="table table-responsive table-striped">
+        <thead>
+          <tr>
+            <th (click)="setOrder('id')">ID</th>
+            <th (click)="setOrder('titulo')">Titulo</th>
+            <th (click)="setOrder('director')">Director</th>
+            <th (click)="setOrder('duracion')">Duracion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pelicula of respFromServer?.content">
+            <td>{{pelicula.id}}</td>
+            <td>{{pelicula.titulo}}</td>
+            <td>{{pelicula.director}}</td>
+            <td>{{pelicula.duracion}}</td>
+            <td>
+              <div class="btn-group" role="group" aria-label="Herramientas">
+                <button class="btn btn-sm btn-outline-primary" (click)="selectPelicula(pelicula.id)">
+                  Seleccionar
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
