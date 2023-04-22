@@ -64,6 +64,7 @@ import { GetSesionComponent } from './component/application/admin/sesion/get-ses
 import { PlistSesionComponent } from './component/application/admin/sesion/plist-sesion/plist-sesion.component';
 import { UpdateSesionComponent } from './component/application/admin/sesion/update-sesion/update-sesion.component';
 import { DataTableSesionComponent } from './component/application/admin/sesion/Auxiliar/data-table-sesion/data-table-sesion.component';
+import { ListEntradasComponent } from './component/application/admin/entrada/list-entradas/list-entradas.component';
 
 @NgModule({
   declarations: [
@@ -128,7 +129,8 @@ import { DataTableSesionComponent } from './component/application/admin/sesion/A
     GetSesionComponent,
     PlistSesionComponent,
     UpdateSesionComponent,
-    DataTableSesionComponent
+    DataTableSesionComponent,
+    ListEntradasComponent
   ],
   imports: [
     BrowserModule,
