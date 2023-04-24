@@ -65,6 +65,8 @@ import { PlistSesionComponent } from './component/application/admin/sesion/plist
 import { UpdateSesionComponent } from './component/application/admin/sesion/update-sesion/update-sesion.component';
 import { DataTableSesionComponent } from './component/application/admin/sesion/Auxiliar/data-table-sesion/data-table-sesion.component';
 import { ListEntradasComponent } from './component/application/admin/entrada/list-entradas/list-entradas.component';
+import { ViewEntradasComponent } from './component/application/admin/entrada/view-entradas/view-entradas.component';
+import { CreateCompraComponent } from './component/application/admin/compra/create-compra/create-compra.component';
 
 @NgModule({
   declarations: [
@@ -130,7 +132,9 @@ import { ListEntradasComponent } from './component/application/admin/entrada/lis
     PlistSesionComponent,
     UpdateSesionComponent,
     DataTableSesionComponent,
-    ListEntradasComponent
+    ListEntradasComponent,
+    ViewEntradasComponent,
+    CreateCompraComponent
   ],
   imports: [
     BrowserModule,

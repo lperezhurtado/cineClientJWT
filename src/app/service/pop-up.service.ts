@@ -23,4 +23,24 @@ export class PopUpService {
       }
     })
   }
+
+  confirmPopUp(message: string, btnMsg: string, option: string): boolean {
+    let bool: boolean;
+    Swal.fire({
+      title: message,
+      icon: 'success',
+      showCancelButton: false,
+      confirmButtonColor: '#3085d6',
+      confirmButtonText: btnMsg
+    }).then((result) => {
+      if (result.isConfirmed && option === "cr") {
+        bool = true;
+      }
+      else if (result.isConfirmed && option === "up") {
+        bool = false
+      }
+    })
+
+    return bool;
+  }
 }
