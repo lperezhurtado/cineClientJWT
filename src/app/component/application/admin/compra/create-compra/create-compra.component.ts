@@ -1,4 +1,5 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { FormBuilder } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CompraInterface, CompraNewInterface } from 'src/app/model/Compra-interface';
@@ -48,6 +49,7 @@ export class CreateCompraComponent implements OnInit {
     private facturaService: FacturaService,
     private formBuilder: FormBuilder,
     private entradaService: EntradaService,
+    private location: Location,
     private popUpService: PopUpService,
     private pdfService: PdfService
   ) {}
@@ -64,7 +66,7 @@ export class CreateCompraComponent implements OnInit {
   }
 
   ngOnChange() {
-    this.pdfService.downloadPDF(this.dia, this.hora);
+    this.pdfService.downloadPDF(this.dia, this.hora, this.sesion);
     this.updateCompras();
   }
 
@@ -74,6 +76,10 @@ export class CreateCompraComponent implements OnInit {
 
   getSesion() {
     this.sesion = this.arrayEntradas[0].sesion;
+  }
+
+  back() {
+    this.location.back();
   }
 
   setEntradasToCompras() {

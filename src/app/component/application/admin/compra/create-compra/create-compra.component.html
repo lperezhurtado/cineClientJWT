@@ -1,1 +1,81 @@
-<p>create-compra works!</p>
+
+
+<div class="container mt-3">
+
+  <div class="mb-2">
+    <button class="btn btn-outline-danger" routerLink="">Cancelar entradas</button>
+  </div>
+
+  <div class="titulo">
+    <h2>Datos de tu Compra</h2>
+  </div>
+  <div class="datos" *ngIf="loggedUsuario">
+    <div>
+      Entradas a nombre de {{loggedUsuario.nombre}} {{loggedUsuario.apellido1}}
+    </div>
+    <div>
+      Correo: {{loggedUsuario.email}}
+    </div>
+  </div>
+
+  <div class="datos" *ngIf="!loggedUsuario">
+    <div>
+      Entradas a nombre de
+    </div>
+    <div>
+      <input type="text" class="form-control">
+    </div>
+    <div>
+      Correo:
+    </div>
+    <div>
+      <input type="text" class="form-control">
+    </div>
+  </div>
+
+
+  <div class="pelicula">
+    <div>
+      {{sesion.pelicula.titulo}}
+    </div>
+    <div>
+      {{sesion.fechaHora | date: 'dd/MMM - HH:mm'}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="my-2">
+        <h6>Total de entradas {{arrayEntradas.length}}</h6>
+      </div>
+      <ul>
+        <li *ngFor="let item of arrayEntradas">
+          Entrada nº {{item.id}} (fila {{item.ejeX+1}} - butaca {{item.ejeY+1}})
+        </li>
+      </ul>
+      <div class="my-2">
+        <h6>Total {{totalPrecio}} €</h6>
+      </div>
+    </div>
+    <div class="col">
+      <button class="btn btn-outline-danger" (click)="back()">
+        Volver
+      </button>
+      <button class="btn btn-outline-info" *ngIf="this.arrayCompras.length == 0" (click)="createCompra()">
+        Confirmar compra
+      </button>
+
+      <!--<button class="btn btn-outline-info" (click)="createFactura()">
+        Crear factura
+      </button>-->
+
+      <!--<button class="btn btn-outline-info" (click)="getCompras()">
+        get compra
+      </button>-->
+
+      <button class="btn btn-outline-success" *ngIf="this.arrayCompras.length != 0" (click)="ngOnChange()">
+        Imprimir Entradas
+      </button>
+
+    </div>
+  </div>
+</div>

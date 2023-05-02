@@ -38,6 +38,6 @@
 <div class="container mt-4" *ngIf="resp"> <!--&& loggedUser.tipousuario.id ==2-->
 
   <!--<a routerLink="/admin/entrada/create" role="button" class="btn btn-outline-info">Comprar</a>-->
-  <button routerLink="/admin/entrada/create" (click)="arrayEntradasOnLocalStorage()" class="btn btn-outline-success float-end" [disabled]="arrayEntradas.length==0" >Comprar</button>
+  <button routerLink="/admin/compra/create" (click)="arrayEntradasOnLocalStorage()" class="btn btn-outline-success float-end" [disabled]="arrayEntradas.length==0" >Comprar</button>
   <button class="btn btn-outline-dark float-end" *ngIf="arrayEntradas.length!=0" (click)="cleanArrayEntradas()">Quitar elecciones</button>
 </div>

@@ -37,6 +37,7 @@ import { GetSesionComponent } from './component/application/admin/sesion/get-ses
 import { PlistSesionComponent } from './component/application/admin/sesion/plist-sesion/plist-sesion.component';
 import { UpdateSesionComponent } from './component/application/admin/sesion/update-sesion/update-sesion.component';
 import { ListEntradasComponent } from './component/application/admin/entrada/list-entradas/list-entradas.component';
+import { CreateCompraComponent } from './component/application/admin/compra/create-compra/create-compra.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
@@ -84,8 +85,11 @@ const routes: Routes = [
   {path:'admin/sesion/update/:id', component: UpdateSesionComponent},
   {path:'admin/sesion/view/:id', component: GetSesionComponent},
   {path:'admin/sesion/delete/:id', component: DeleteSesionComponent},
-  //=============== SESION ==================
-  {path:'admin/sesion/list/:id', component: ListEntradasComponent}
+  //=============== ENTRADA ==================
+  {path:'admin/entrada/list/:id', component: ListEntradasComponent},
+    //=============== ENTRADA ==================
+  {path:'admin/compra/create', component: CreateCompraComponent},
+  {path:'admin/compra/create/:entradas[]', component: CreateCompraComponent}
 
 ];
 

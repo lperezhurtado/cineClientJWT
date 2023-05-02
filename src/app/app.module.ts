@@ -67,6 +67,9 @@ import { DataTableSesionComponent } from './component/application/admin/sesion/A
 import { ListEntradasComponent } from './component/application/admin/entrada/list-entradas/list-entradas.component';
 import { ViewEntradasComponent } from './component/application/admin/entrada/view-entradas/view-entradas.component';
 import { CreateCompraComponent } from './component/application/admin/compra/create-compra/create-compra.component';
+import { GetSesionPeliculaComponent } from './component/application/user/sesiones/get-sesion-pelicula/get-sesion-pelicula.component';
+import { ViewPeliculaComponent } from './component/application/user/pelicula/view-pelicula/view-pelicula.component';
+import { CarteleraComponent } from './component/application/user/cartelera/cartelera.component';
 
 @NgModule({
   declarations: [
@@ -134,7 +137,10 @@ import { CreateCompraComponent } from './component/application/admin/compra/crea
     DataTableSesionComponent,
     ListEntradasComponent,
     ViewEntradasComponent,
-    CreateCompraComponent
+    CreateCompraComponent,
+    GetSesionPeliculaComponent,
+    ViewPeliculaComponent,
+    CarteleraComponent
   ],
   imports: [
     BrowserModule,
