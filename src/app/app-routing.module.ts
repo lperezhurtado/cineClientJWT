@@ -38,6 +38,8 @@ import { PlistSesionComponent } from './component/application/admin/sesion/plist
 import { UpdateSesionComponent } from './component/application/admin/sesion/update-sesion/update-sesion.component';
 import { ListEntradasComponent } from './component/application/admin/entrada/list-entradas/list-entradas.component';
 import { CreateCompraComponent } from './component/application/admin/compra/create-compra/create-compra.component';
+import { CarteleraComponent } from './component/application/user/cartelera/cartelera.component';
+import { ViewPeliculaComponent } from './component/application/user/pelicula/view-pelicula/view-pelicula.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
@@ -87,9 +89,13 @@ const routes: Routes = [
   {path:'admin/sesion/delete/:id', component: DeleteSesionComponent},
   //=============== ENTRADA ==================
   {path:'admin/entrada/list/:id', component: ListEntradasComponent},
-    //=============== ENTRADA ==================
+    //=============== COMPRA ==================
   {path:'admin/compra/create', component: CreateCompraComponent},
-  {path:'admin/compra/create/:entradas[]', component: CreateCompraComponent}
+  {path:'admin/compra/create/:entradas[]', component: CreateCompraComponent},
+  //================== U S E R ================
+  //==================CARTELERA ===============
+  {path:'user/cartelera/plist', component: CarteleraComponent},
+  {path:'user/pelicula/view/:id', component: ViewPeliculaComponent}
 
 ];
 

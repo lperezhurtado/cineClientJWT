@@ -20,6 +20,7 @@ import { DropdownRegisterPageComponent } from './component/shared/unrouted/dropd
 import { PaginationUnroutedComponent } from './component/shared/unrouted/pagination-unrouted/pagination-unrouted.component';
 import { PaginationComponent } from './component/shared/unrouted/pagination/pagination.component';
 import { SearchUnroutedComponent } from './component/shared/unrouted/search-unrouted/search-unrouted.component';
+//=================================== U S U A R I O ===================================================
 import { PlistUsuarioComponent } from './component/application/admin/usuario/plist-usuario/plist-usuario.component';
 import { GetUsuarioComponent } from './component/application/admin/usuario/get-usuario/get-usuario.component';
 import { DataTableUsuarioComponent } from './component/application/admin/usuario/auxiliar/data-table-usuario/data-table-usuario.component';
@@ -27,12 +28,14 @@ import { DeleteUsuarioComponent } from './component/application/admin/usuario/de
 import { CreateUsuarioComponent } from './component/application/admin/usuario/create-usuario/create-usuario.component';
 import { UpdateUsuarioComponent } from './component/application/admin/usuario/update-usuario/update-usuario.component';
 import { ListaTipousuarioSelectionComponent } from './component/application/admin/tipousuario/auxiliar/lista-tipousuario-selection/lista-tipousuario-selection.component';
+//=================================== T I P O S A L A ===================================================
 import { ListaTiposalaSelectionComponent } from './component/application/admin/tiposala/auxiliar/lista-tiposala-selection/lista-tiposala-selection.component';
 import { CreateTiposalaComponent } from './component/application/admin/tiposala/create-tiposala/create-tiposala.component';
 import { DeleteTiposalaComponent } from './component/application/admin/tiposala/delete-tiposala/delete-tiposala.component';
 import { GetTiposalaComponent } from './component/application/admin/tiposala/get-tiposala/get-tiposala.component';
 import { UpdateTiposalaComponent } from './component/application/admin/tiposala/update-tiposala/update-tiposala.component';
 import { PlistTiposalaComponent } from './component/application/admin/tiposala/plist-tiposala/plist-tiposala.component';
+//=================================== S A L A ===================================================
 import { GetSalaComponent } from './component/application/admin/sala/get-sala/get-sala.component';
 import { UpdateSalaComponent } from './component/application/admin/sala/update-sala/update-sala.component';
 import { CreateSalaComponent } from './component/application/admin/sala/create-sala/create-sala.component';
@@ -135,9 +138,11 @@ import { CarteleraComponent } from './component/application/user/cartelera/carte
     PlistSesionComponent,
     UpdateSesionComponent,
     DataTableSesionComponent,
+    //=================== ENTRADA ADMIN =======================
     ListEntradasComponent,
     ViewEntradasComponent,
     CreateCompraComponent,
+    //=================== U S E R =======================
     GetSesionPeliculaComponent,
     ViewPeliculaComponent,
     CarteleraComponent
