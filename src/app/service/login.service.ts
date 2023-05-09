@@ -68,6 +68,7 @@ export class LoginService {
         return this.decodeService.parseJwt(token).name;
     }
   }
+
   getUserType(): string {
     if (!this.isSessionActive()) {
       return "";
@@ -76,11 +77,12 @@ export class LoginService {
       return this.decodeService.parseJwt(token).tipousuario;
     }
   }
+
   getID() {
     if (!this.isSessionActive()) {
       return "";
     } else {
-      let token: string = localStorage.getItem("token");
+      let token: string = this.getToken();
       return this.decodeService.parseJwt(token).id;
     }
   }

@@ -1,3 +1,4 @@
+import { LoginService } from './../../../../../service/login.service';
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { FormBuilder } from '@angular/forms';
@@ -12,6 +13,7 @@ import { EntradaService } from 'src/app/service/entrada.service';
 import { FacturaService } from 'src/app/service/factura.service';
 import { PdfService } from 'src/app/service/pdf.service';
 import { PopUpService } from 'src/app/service/pop-up.service';
+import { UsuarioService } from 'src/app/service/usuario.service';
 
 @Component({
   templateUrl: './create-compra.component.html',
@@ -19,6 +21,7 @@ import { PopUpService } from 'src/app/service/pop-up.service';
 })
 export class CreateCompraComponent implements OnInit {
 
+  idUser: number | string;
   loggedUsuario: UsuarioInterface;
   descuentoUsuario: number;
   sesion: SesionInterface;
@@ -51,7 +54,9 @@ export class CreateCompraComponent implements OnInit {
     private entradaService: EntradaService,
     private location: Location,
     private popUpService: PopUpService,
-    private pdfService: PdfService
+    private pdfService: PdfService,
+    private loginService: LoginService,
+    private userService: UsuarioService
   ) {}
 
   ngOnInit(): void {
@@ -63,11 +68,21 @@ export class CreateCompraComponent implements OnInit {
     this.fecha = this.sesion.fechaHora.toString();
     this.dia = this.fecha.slice(0, 10);
     this.hora = this.fecha.slice(11, 16);
+    this.idUser = this.loginService.getID();
+    this.getUser();
   }
 
   ngOnChange() {
-    this.pdfService.downloadPDF(this.dia, this.hora, this.sesion);
+    this.pdfService.downloadPDF(this.dia, this.hora, this.sesion, this.arrayEntradas);
     this.updateCompras();
+  }
+
+  getUser() {
+    this.userService.getUsuario(this.idUser).subscribe({
+      next:(resp: UsuarioInterface) => {
+        this.loggedUsuario = resp;
+      }
+    })
   }
 
   arrayEntradasFromLocalStorage() {
@@ -114,6 +129,8 @@ export class CreateCompraComponent implements OnInit {
     setTimeout( () => {
       //this.popUpService.confirmPopUp("Se ha realizado tu compra", "De acuerdo", "cr");
       if (this.popUpService.confirmPopUp("Se ha realizado tu compra", "De acuerdo", "cr")) {
+        this.getCompras();
+      } else {
         this.getCompras();
       }
     }, 500)

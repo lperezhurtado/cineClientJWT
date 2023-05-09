@@ -26,7 +26,7 @@ export class PdfService {
     return dia.split("-").reverse().join("-");
   }
 
-  downloadPDF(dia: string, hora: string, sesion: SesionInterface):void {
+  downloadPDF(dia: string, hora: string, sesion: SesionInterface, arrayEntradas: EntradaInterface[]):void {
     let document = new jsPDF('p', 'mm', 'a4');
 
     var altoPagina = 247;
@@ -58,18 +58,18 @@ export class PdfService {
     document.text("Precio", 153, y);
 
     document.setFont("courier", "normal");
-    for (let i = 0; i < this.arrayEntradas.length; i++) {
+    for (let i = 0; i < arrayEntradas.length; i++) {
       y += 10;
 
-      document.text(this.arrayEntradas[i].ejeX.toString(),13, y); //FILA
-      document.text(this.arrayEntradas[i].ejeY.toString(),53, y); //BUTACA
+      document.text(arrayEntradas[i].ejeX.toString(),13, y); //FILA
+      document.text(arrayEntradas[i].ejeY.toString(),53, y); //BUTACA
       document.text(sesion.tarifa.nombre,103, y); //TARIFA
       document.text(sesion.tarifa.precio+" €",153, y);
     }
 
     document.setFont("courier", "bold");
     document.text("TOTAL: ",123, y+20);
-    document.text(sesion.tarifa.precio*this.arrayEntradas.length+" €",153, y+20);
+    document.text(sesion.tarifa.precio * arrayEntradas.length+" €",153, y+20);
     document.save('entradas-' + sesion.pelicula.titulo + '.pdf');
   }
 }

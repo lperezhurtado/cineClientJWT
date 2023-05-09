@@ -1,6 +1,9 @@
 import { CryptoService } from 'src/app/service/crypto.service';
 import { DecodeService } from './service/decode.service';
 import { NgModule, LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
+registerLocaleData(localeEs);
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -73,6 +76,7 @@ import { CreateCompraComponent } from './component/application/admin/compra/crea
 import { GetSesionPeliculaComponent } from './component/application/user/sesiones/get-sesion-pelicula/get-sesion-pelicula.component';
 import { ViewPeliculaComponent } from './component/application/user/pelicula/view-pelicula/view-pelicula.component';
 import { CarteleraComponent } from './component/application/user/cartelera/cartelera.component';
+import { SelectedEntradasComponent } from './component/application/admin/entrada/Auxiliar/selected-entradas/selected-entradas.component';
 
 @NgModule({
   declarations: [
@@ -145,7 +149,8 @@ import { CarteleraComponent } from './component/application/user/cartelera/carte
     //=================== U S E R =======================
     GetSesionPeliculaComponent,
     ViewPeliculaComponent,
-    CarteleraComponent
+    CarteleraComponent,
+    SelectedEntradasComponent
   ],
   imports: [
     BrowserModule,

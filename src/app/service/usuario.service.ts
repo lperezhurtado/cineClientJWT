@@ -51,7 +51,7 @@ export class UsuarioService {
     return this.httpClient.post<number>(this.url+"/", usuario2Send, {withCredentials:true});
    }
 
-   getUsuario(id: number): Observable<UsuarioInterface>{
+   getUsuario(id: number | string): Observable<UsuarioInterface>{
     return this.httpClient.get<UsuarioInterface>(this.url+'/'+id, {withCredentials:true});
    }
 

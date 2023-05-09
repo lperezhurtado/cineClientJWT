@@ -81,15 +81,22 @@ export class ListEntradasComponent implements OnInit {
   }
 
   seleccionarEntrada(entrada: EntradaInterface) {
+    var pos = this.arrayEntradas.indexOf(entrada);
 
-    !entrada.libre? this.popUpService.notificationPopUp("Butaca ocupada", "warning") : '';
+    !entrada.libre? this.popUpService.notificationPopUp("Butaca ocupada", "warning") :
+                    this.arrayEntradas.includes(entrada)? this.arrayEntradas.splice(pos, 1) : this.arrayEntradas.push(entrada);
 
-    if(this.arrayEntradas.includes(entrada)) {
-      let pos = this.arrayEntradas.indexOf(entrada);
-      this.arrayEntradas.splice(pos, 1);
+    /*if (!entrada.libre) {
+      this.popUpService.notificationPopUp("Butaca ocupada", "warning");
     } else {
-      this.arrayEntradas.push(entrada);
-    }
+      if(this.arrayEntradas.includes(entrada)) {
+        var pos = this.arrayEntradas.indexOf(entrada);
+        this.arrayEntradas.splice(pos, 1);
+      } else {
+        this.arrayEntradas.push(entrada);
+      }
+    }*/
+
   }
 
   arrayEntradasOnLocalStorage() {

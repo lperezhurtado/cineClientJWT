@@ -41,3 +41,8 @@
   <button routerLink="/admin/compra/create" (click)="arrayEntradasOnLocalStorage()" class="btn btn-outline-success float-end" [disabled]="arrayEntradas.length==0" >Comprar</button>
   <button class="btn btn-outline-dark float-end" *ngIf="arrayEntradas.length!=0" (click)="cleanArrayEntradas()">Quitar elecciones</button>
 </div>
+
+<div class="mt-3 bg-light" *ngIf="resp">
+  <app-selected-entradas [entradas]="arrayEntradas" [sesion]="this.sesion"></app-selected-entradas>
+
+</div>
