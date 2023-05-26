@@ -1,6 +1,6 @@
 import { EntradaInterface, EntradaNewInterface } from './../model/Entrada-interface';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 

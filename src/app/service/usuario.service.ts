@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 import { IUsuario2Send, IUsuario2Update, UsuarioInterface, UsuarioPageInterface } from '../model/Usuario-interface';
 
 @Injectable({

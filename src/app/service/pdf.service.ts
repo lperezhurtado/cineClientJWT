@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 import { SesionInterface } from '../model/Sesion-interface';
 import { EntradaInterface } from '../model/Entrada-interface';
 declare let jsPDF: any;
