@@ -2,7 +2,7 @@ import { SesionNewInterface } from './../model/Sesion-interface';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 import { SesionInterface, SesionPageInterface } from '../model/Sesion-interface';
 
 @Injectable({
