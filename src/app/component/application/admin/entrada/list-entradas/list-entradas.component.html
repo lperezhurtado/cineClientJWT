@@ -2,11 +2,11 @@
 <div class="mt-4 ms-5">
   <button class="btn btn-outline-danger" (click)="back()">Volver</button>
 </div>
-
-<div class="container mt-5" *ngIf="resp">
+<h1 class="text-center">Selecciona tus butacas</h1>
+<div class="container container-shadow mt-5" *ngIf="resp">
   <div class="table-responsive table-hover">
     <h5>Pantalla</h5>
-    <div class="pantalla mb-5"></div>
+    <div class="pantalla mb-5 bg-light"></div>
 
     <table class="table">
       <tr *ngFor="let fila of filas">
@@ -38,8 +38,8 @@
 <div class="container mt-4" *ngIf="resp"> <!--&& loggedUser.tipousuario.id ==2-->
 
   <!--<a routerLink="/admin/entrada/create" role="button" class="btn btn-outline-info">Comprar</a>-->
-  <button routerLink="/admin/compra/create" (click)="arrayEntradasOnLocalStorage()" class="btn btn-outline-success float-end" [disabled]="arrayEntradas.length==0" >Comprar</button>
-  <button class="btn btn-outline-dark float-end" *ngIf="arrayEntradas.length!=0" (click)="cleanArrayEntradas()">Quitar elecciones</button>
+  <button routerLink="/admin/compra/create" (click)="arrayEntradasOnLocalStorage()" class="btn btn-outline-success float-end mt-4" [disabled]="arrayEntradas.length==0" >Comprar</button>
+  <button class="btn btn-outline-dark float-end mt-4 me-1" *ngIf="arrayEntradas.length!=0" (click)="cleanArrayEntradas()">Quitar elecciones</button>
 </div>
 
 <div class="mt-3 bg-light" *ngIf="resp">

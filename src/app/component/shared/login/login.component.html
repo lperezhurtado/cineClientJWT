@@ -61,12 +61,12 @@
 
   <div class="form-container row mt-3">
     <div class="col-lg-8 col-md-7 col-sm-12 py-2 formulario">
-    <h1>Sign in with</h1>
+    <h1>Iniciar sesión con:</h1>
     <form [formGroup]="formLogin">
       <div class="inputs">
 
         <div class="login pb-2">
-          <label class="form-label" for="login">Login</label>
+          <label class="form-label" for="login">Usuario</label>
           <input type="text" id="login" class="" placeholder="Nombre de usuario" name="login" formControlName="login" />
         </div>
 
@@ -78,7 +78,7 @@
 
       <div class="text-center mt-3">
         <button type="button" class="btn btn-login" style="padding-left: 2.5rem; padding-right: 2.5rem;" (click)="login()">
-          Login
+          Entrar
         </button>
       </div>
     </form>

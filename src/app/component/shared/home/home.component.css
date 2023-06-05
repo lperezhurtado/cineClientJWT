@@ -20,14 +20,14 @@ html, body{
 }
 
 .cuerpo {
-  background-image: url('fondo3.jpg');
+  /*background-image: url('fondo3.jpg');*/
+  background-color: slategrey;
 
   background-size: 100vw;
 }
 
 .contenedor {
-  background-color: rgba(240, 175, 132, 0.9);
-
+  background-color: rgba(255, 255, 255, 0.6);
   width: 75vw;
   /*min-height: 80vh;*/
   height: 100%;
@@ -40,7 +40,7 @@ html, body{
 
 .infoContainer > *{
   box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.75);
-  border-radius: 5px;
+  border-radius: 7px;
   padding: .5vh;
   text-align: center;
 }
@@ -61,7 +61,8 @@ html, body{
   height: auto;
   display: flex;
   box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.75);
-  border-radius: 5px;
+  border-radius: 7px;
+  overflow: hidden;
 }
 .imagen {
   display: flex;
@@ -99,7 +100,7 @@ html, body{
   transition: all .5s;
 }
 .peliculasContainer > a:hover {
-  color: rgb(146, 23, 23);
+  color: #33548A;
 
 }
 

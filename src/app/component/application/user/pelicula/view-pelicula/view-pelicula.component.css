@@ -6,9 +6,9 @@
   display: grid;
   gap: 1vw;
   grid-template:
-  "imgContainer   titulo" auto
-  "imgContainer   textoContainer" 4fr
-  "sesiones       sesiones" auto /
+  "imgContainer   titulo"         auto
+  "imgContainer   textoContainer" 1fr
+  "sesiones       sesiones"       auto /
   1fr             2fr;
 }
 
@@ -19,14 +19,13 @@
 }
 .imgContainer {
   grid-area: imgContainer;
-
-  background-color: rgb(216, 153, 111, .9);
+  color: #ffff;
+  background-color:#33548A;
   padding: 1vw;
   border-radius: 10px;
 }
 .textoContainer {
   grid-area: textoContainer;
-
   padding: 1vw;
 }
 .sesiones {

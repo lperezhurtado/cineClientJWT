@@ -37,18 +37,25 @@ export class PdfService {
     img.src = this.getURLimage(sesion.pelicula.imagen);
     document.addImage(img, 'jpg', 10, 12, 35, 50);
 
+    img.src = "assets/images/logo/Logo-Luis.png"; //LOGO
+    document.addImage(img, 'jpg', 180, 5, 30, 30);
+
     document.setFontSize(23);
     document.setFont('courier', 'bold');
     document.text(sesion.pelicula.titulo, 50, 20);
 
+    var fechaActual = new Date().toString().slice(4, 21);
+
     document.setFontSize(13);
     document.text("CineMatrix", 50, 50);
-    document.text(this.reverseFecha(hora), 50, 60);
+    document.setFont("courier", "normal");
+    document.text("Compra: "+this.reverseFecha(fechaActual), 130, 50);
+    document.text(this.reverseFecha(hora)+" h", 50, 60);
     document.text(this.reverseFecha(dia), 75, 60);
 
     document.roundedRect(10, 65, 190, 1, 1, 1, "F");
 
-    document.setFont("courier", "normal");
+
     document.text("Sala " + sesion.sala.id, 12, 72);
 
     document.setFont("courier", "bold");

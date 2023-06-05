@@ -1,0 +1,12 @@
+.contenedor {
+  border-radius: 18px;
+  box-shadow: inset 4px 4px 8px #8f8f8f,
+            inset -7px -7px 14px #ffffff;
+  padding: 2vh;
+}
+
+@media(max-width:635px) {
+  .contenedor {
+    width: 95vw;
+  }
+}

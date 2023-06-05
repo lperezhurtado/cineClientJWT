@@ -1,6 +1,6 @@
 
 
-<div class="container mt-3">
+<div class="container container-shadow mt-3">
 
   <div class="mb-2">
     <button class="btn btn-outline-danger" routerLink="">Cancelar entradas</button>
@@ -10,10 +10,10 @@
     <h2>Datos de tu Compra</h2>
   </div>
   <div class="datos" *ngIf="loggedUsuario">
-    <div>
+    <div class="mb-1">
       Entradas a nombre de {{loggedUsuario.nombre}} {{loggedUsuario.apellido1}}
     </div>
-    <div>
+    <div class="mb-1">
       Correo: {{loggedUsuario.email}}
     </div>
   </div>
@@ -35,17 +35,17 @@
 
 
   <div class="pelicula">
-    <div>
-      {{sesion.pelicula.titulo}}
+    <div class="mb-2">
+      Pelicula: {{sesion.pelicula.titulo}}
     </div>
-    <div>
-      {{sesion.fechaHora | date: 'EEE dd/MMM - HH:mm'}}
+    <div class="mb-1">
+      <b>Día: {{sesion.fechaHora | date: 'EEEE dd/MMM - HH:mm'}}</b>
     </div>
   </div>
   <div class="row">
     <div class="col">
       <div class="my-2">
-        <h6>Total de entradas {{arrayEntradas.length}}</h6>
+        <h5>Total de entradas {{arrayEntradas.length}}</h5>
       </div>
       <ul>
         <li *ngFor="let item of arrayEntradas">
@@ -53,14 +53,14 @@
         </li>
       </ul>
       <div class="my-2">
-        <h6>Total {{totalPrecio}} €</h6>
+        <h5>Total {{totalPrecio}} €</h5>
       </div>
     </div>
     <div class="col">
-      <button class="btn btn-outline-danger" (click)="back()">
+      <button class="btn btn-outline-danger me-1" *ngIf="this.arrayCompras.length == 0" (click)="back()">
         Volver
       </button>
-      <button class="btn btn-outline-info" *ngIf="this.arrayCompras.length == 0" (click)="createCompra()">
+      <button class="btn btn-outline-success" *ngIf="this.arrayCompras.length == 0" (click)="createCompra()">
         Confirmar compra
       </button>
 
@@ -72,7 +72,7 @@
         get compra
       </button>-->
 
-      <button class="btn btn-outline-success" *ngIf="this.arrayCompras.length != 0" (click)="ngOnChange()">
+      <button class="btn btn-outline-info" *ngIf="this.arrayCompras.length != 0" (click)="ngOnChange()">
         Imprimir Entradas
       </button>
 

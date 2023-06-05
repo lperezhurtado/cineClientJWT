@@ -1,4 +1,11 @@
 
+.container-shadow {
+  border-radius: 18px;
+  box-shadow: inset 4px 4px 8px #8f8f8f,
+            inset -7px -7px 14px #ffffff;
+  padding: 2vh;
+}
+
 .pantalla {
   height: 30px;
   width: 100%;
@@ -30,4 +37,11 @@ h5 {
 .butaca > div {
   display: flex;
   justify-content: center;
+  cursor: pointer;
+}
+
+@media(max-width:635px) {
+  .container {
+    width: 95vw;
+  }
 }

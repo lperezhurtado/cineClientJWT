@@ -6,7 +6,7 @@
 .fecha {
   display: flex;
   align-items: center;
-  background-color: rgb(216, 153, 111, .5);
+  background-color: #33548a7a;;
   border-radius: 10px;
 }
 
@@ -23,22 +23,21 @@
   font-size: clamp(14px,2vw,25px);
 }
 
-.horaContainer{
+.horaContainer {
   margin: 0 auto;
   align-items: center;
-
 }
 
 a {
   text-decoration: none;
-  color: #000;
+  color: #ffff;
   transition: .4s ease;
   height: 100%;
   width: 100%;
   padding: 1vw;
   box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.75);
   border-radius: 10px;
-  background-color: rgb(216, 153, 111, .9);
+  background-color: #33548A;;
 }
 
 a:hover {
