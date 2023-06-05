@@ -7,10 +7,10 @@
       <i class="pi pi-user-plus me-1"></i>
       Nuevo usuario
     </a>
-    <a [routerLink]="['/admin/usuario/create']" class="btn btn-sm btn-outline-danger mx-2">
+    <!--<a [routerLink]="['/admin/usuario/create']" class="btn btn-sm btn-outline-danger mx-2">
       <i class="pi pi-user-minus me-1"></i>
       Borrar sel.
-    </a>
+    </a>-->
   </div>
 
   <!--========== INDICE Y BUSCADOR ============-->
@@ -27,14 +27,14 @@
     <table class="table">
       <thead class="">
         <tr>
-          <th style="cursor: default;">
+          <!--<th style="cursor: default;">
             <div class="checkbox-wrapper-39">
               <label>
-                <!--<input type="checkbox" id="masterCheckbox" (click)="setAllChecked($event)">-->
+                <input type="checkbox" id="masterCheckbox" (click)="setAllChecked($event)">
                 <span class="checkbox"></span>
               </label>
             </div>
-        </th>
+          </th>-->
           <th (click)="setOrder('id')">
             <i id="id" class="pi pi-sort-alt"></i>
             <!--<i *ngIf="this.sortField == 'id' && this.sortDirection == 'asc'" class="pi pi-sort-numeric-down"></i>
@@ -74,14 +74,14 @@
       </thead>
       <tbody>
         <tr *ngFor="let usuario of usuariosPage?.content">
-          <td style="cursor: default;">
+          <!--<td style="cursor: default;">
             <div class="checkbox-wrapper-39">
               <label>
-                <!--<input type="checkbox" [(ngModel)]="isChecked" (change)="setOneChecked($event, usuario.id)" class="check"/>--><!--[(ngModel)]="isChecked"-->
+                <input type="checkbox" [(ngModel)]="isChecked" (change)="setOneChecked($event, usuario.id)" class="check"/>[(ngModel)]="isChecked"
                 <span class="checkbox"></span>
               </label>
             </div>
-          </td>
+          </td>-->
           <td>{{usuario.id}}</td>
           <td>{{usuario.nombre}}</td>
           <td>{{usuario.apellido1}}</td>

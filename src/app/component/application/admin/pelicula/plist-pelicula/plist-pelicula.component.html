@@ -7,10 +7,10 @@
       <i class="pi pi-plus me-1"></i>
       Nueva película
     </a>
-    <a [routerLink]="['/admin/pelicula/create']" class="btn btn-sm btn-outline-danger mx-2">
+    <!--<a [routerLink]="['/admin/pelicula/create']" class="btn btn-sm btn-outline-danger mx-2">
       <i class="pi pi-times me-1"></i>
       Borrar sel.
-    </a>
+    </a>-->
   </div>
 
   <div class="pagination-div">
@@ -25,14 +25,14 @@
     <table class="table">
       <thead class="">
         <tr>
-          <th style="cursor: default;">
+          <!--<th style="cursor: default;">
             <div class="checkbox-wrapper-39">
               <label>
                 <input type="checkbox" id="masterCheckbox">
                 <span class="checkbox"></span>
               </label>
             </div>
-        </th>
+          </th>-->
           <th (click)="setOrder('id')">
             <i id="id" class="pi pi-sort-alt"></i>
             <!--<i *ngIf="this.sortField == 'id' && this.sortDirection == 'asc'" class="pi pi-sort-numeric-down"></i>
@@ -72,14 +72,14 @@
       </thead>
       <tbody>
         <tr *ngFor="let pelicula of resp?.content">
-          <td style="cursor: default;">
+          <!--<td style="cursor: default;">
             <div class="checkbox-wrapper-39">
               <label>
                 <input type="checkbox"/>
                 <span class="checkbox"></span>
               </label>
             </div>
-          </td>
+          </td>-->
           <td>{{pelicula.id}}</td>
           <td><a [routerLink]="['/admin/pelicula/view',pelicula.id]"><img style="width: 100px; height: 140px;" [src]="getURLimage(pelicula.imagen)" alt="portada pelicula"></a></td>
           <td>{{pelicula.titulo}}</td>

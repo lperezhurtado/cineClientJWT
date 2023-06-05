@@ -80,6 +80,7 @@ html, body{
   width: 75%;
   flex-shrink: 0;
 }
+
 .imagen > img {
   width:100%;
   object-fit: cover;
