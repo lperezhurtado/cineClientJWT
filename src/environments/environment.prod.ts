@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseURL: "http://localhost:8082"
+  baseURL: "http://cineserverjwt-production.up.railway.app"
 };
