@@ -3,7 +3,7 @@
 <div class="container container-shadow mt-3">
 
   <div class="mb-2">
-    <button class="btn btn-outline-danger" routerLink="">Cancelar entradas</button>
+    <button class="btn btn-outline-danger" *ngIf="this.arrayCompras.length == 0" routerLink="">Cancelar entradas</button>
   </div>
 
   <div class="titulo">
