@@ -176,8 +176,27 @@ h3, p {
   padding: 1vw;
 }
 
-
 iframe {
   border-radius: 10px;
   box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.75);
+}
+
+@media(max-width:635px) {
+  .infoContainer {
+    margin-top: 1vw;
+    height: 100%;
+    gap: .5vw;
+    grid-template:
+    "description" auto
+    "infoLocal"   auto
+    "tarifa"      auto
+    "normas"      auto/
+      1fr;
+  }
+
+  iframe {
+    width: 150;
+    height: 50;
+  }
+
 }
