@@ -111,8 +111,8 @@ html, body{
   padding: 1vw;
 }
 .portada{
-  width: clamp(140px,1vw,180px);
-  height: clamp(230px,1vw,270px);
+  width: clamp(160px,1vw,180px);
+  height: clamp(250px,1vw,270px);
 }
 a > img {
   width: 100%;
