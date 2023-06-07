@@ -19,7 +19,7 @@
       <a routerLink="/user/cartelera/plist"><h3>Ver cartelera completa</h3></a>
       <div class="peliculas">
         <div class="portada" *ngFor="let pelicula of peliculas?.content">
-          <a [routerLink]="['/user/pelicula/view',pelicula.id]"><img [src]="getURLimage(pelicula.imagen)" alt=""></a>
+          <a [routerLink]="['/user/pelicula/view',pelicula.id]"><img [src]="getURLimage(pelicula.imagen)" alt="portada"></a>
         </div>
       </div>
     </div>
