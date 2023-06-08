@@ -186,6 +186,8 @@ export class CreateCompraComponent implements OnInit {
           //this.popUpService.confirmPopUp("Entradas descargadas", "Ver", "up");
           if (!this.popUpService.confirmPopUp("Entradas descargadas", "Ver", "up")) {
             this.router.navigate(['/home']);
+          } else {
+            this.router.navigate(['/home']);
           }
         }
       });
