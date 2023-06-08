@@ -27,7 +27,7 @@ export class DeleteSesionComponent {
       next: (resp: number) => {
         this.msg = "Sesión "+this.id+" eliminada";
 
-        const myModal = new bootstrap.Modal('#removeInfo', {
+        const myModal = new bootstrap.Modal(document.getElementById('removeInfo'), {
           keyboard: false
         })
 
